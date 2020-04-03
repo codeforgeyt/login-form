@@ -1,0 +1,13 @@
+<div class="login-wrapper">
+    <form class="form-signin" (ngSubmit)="onSubmit(signInForm)" #signInForm="ngForm">
+        <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+
+        <label for="inputlogin" class="sr-only">Login </label>
+        <input type="text" id="inputLogin" class="form-control" name="login" placeholder="Login" required autofocus ngModel>
+
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Password" required ngModel>
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    </form>
+</div>
