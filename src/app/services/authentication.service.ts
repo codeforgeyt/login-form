@@ -12,14 +12,14 @@ export class AuthenticationService {
 
   constructor(private router: Router) { }
 
-  authenticate(signInData: SignInData) {
-    console.log('authenicate called: ' + this.isAuthenticated);
+  authenticate(signInData: SignInData): boolean {
     if (this.checkCredentials(signInData)) {
       this.isAuthenticated = true;
       this.router.navigate(['home']);
-      return;
+      return true;
     }
     this.isAuthenticated = false;
+    return false;
   }
 
   private checkCredentials(signInData: SignInData): boolean {
@@ -32,6 +32,11 @@ export class AuthenticationService {
 
   private checkPassword(password: string): boolean {
     return password === this.mockUser.getPassword();
+  }
+
+  logout() {
+    this.isAuthenticated = false;
+    this.router.navigate(['']);
   }
 
   getIsAuthenticated(): boolean {

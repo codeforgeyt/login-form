@@ -13,7 +13,7 @@ import { StatisticComponent } from './statistic/statistic.component';
     AppComponent,
     LoginComponent,
     HomeComponent,
-    StatisticComponent
+    StatisticComponent,
   ],
   imports: [
     BrowserModule,

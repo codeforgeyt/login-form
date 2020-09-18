@@ -1,13 +1,26 @@
 <div class="login-wrapper">
-    <form class="form-signin" (ngSubmit)="onSubmit(signInForm)" #signInForm="ngForm">
-        <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+    <div class="card">
+        <div class="card-body">
+            <form class="form-signin" (ngSubmit)="onSubmit(signInForm)" #signInForm="ngForm">
+                <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
 
-        <label for="inputlogin" class="sr-only">Login </label>
-        <input type="text" id="inputLogin" class="form-control" name="login" placeholder="Login" required autofocus ngModel>
+                <label for="inputlogin" class="sr-only">Login </label>
+                <input type="text" id="inputLogin" class="form-control" name="login" placeholder="Login" ngModel
+                    required autofocus>
 
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Password" required ngModel>
+                <label for="inputPassword" class="sr-only">Password</label>
+                <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Password"
+                    autocomplete="on" ngModel required>
 
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-    </form>
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+
+                <div class="alert alert-danger" role="alert" *ngIf="isFormValid">
+                    Please fill all fields.
+                </div>
+                <div class="alert alert-danger" role="alert" *ngIf="areCredentialsInvalid">
+                    Invalid user or password.
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
